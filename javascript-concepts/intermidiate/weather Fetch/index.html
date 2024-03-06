@@ -6,13 +6,22 @@
     <title>API calling</title>
 </head>
 <body>
-    <h1>Weahter API data</h1>
-    <input type="text" id="search" />
-    <button id="search-btn">Seacrh</button>
-
-    <h3 id="city-name">City</h3>
-    <h4 id="city-time">Time</h4>
-    <p id="city-temp">Temp.</p>
+    <h1 style="text-align: center;" id="timer">
+        Timer: </h1>
+    <div>
+        <h2>Weahter API data: <span id="city-data">City</span></h2>
+        <input type="text" id="search" />
+        <button id="search-btn">Seacrh</button>
+    
+        <h3 id="city-name">City</h3>
+        <h4 id="city-time">Time</h4>
+         <div id="img-container"></div>
+        <p id="city-temp">Temp.</p>
+    </div>
+    <div id="get-location">
+        <h2>Get current location- <span id="current-loc">current</span></h2>
+        <button id="get-btn">Get Location</button>
+    </div>
 
     <script src="apiCalling.js"></script>
 </body>
