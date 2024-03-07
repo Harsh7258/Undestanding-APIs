@@ -7,6 +7,7 @@ const cityName = document.getElementById("city-name");
 const cityTemp = document.getElementById("city-temp");
 const cityTime = document.getElementById("city-time");
 const cityData = document.getElementById("city-data");
+const stopButton = document.getElementById("timer-btn");
 
 async function getAPIData(cityname) {
     const api = await fetch(`http://api.weatherapi.com/v1/current.json?key=ccee86e9ac8345b09ab172616240503&q=${cityname}&aqi=yes`);
@@ -49,3 +50,14 @@ function failedLoc(err) {
 getLocation.addEventListener("click", async () => {
     navigator.geolocation.getCurrentPosition(getLoc, failedLoc);
 });
+
+// Clock
+function showTime() {
+    const currentTime = new Date();
+    const time = `Time: ${currentTime.toLocaleDateString()}, ${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()}`;
+    document.getElementById("timer").innerText = time;
+};
+const interval = setInterval(showTime, 1000);
+stopButton.addEventListener("click", () => {
+    clearInterval(interval);
+})
