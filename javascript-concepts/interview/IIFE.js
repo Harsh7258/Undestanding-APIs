@@ -1,5 +1,9 @@
 // IIFE - Immediately invoked function expression
 
+(function immediate() {
+    console.log(new Date().toLocaleDateString());
+})(); // IIFE
+
 const atm = function (initalBal) {
     let balance = initalBal; // This variable is private
     function withdraw(amt) {
@@ -16,4 +20,4 @@ const atm = function (initalBal) {
 const account  = atm(1000);
 console.log('Balance: ' ,account.withdraw(100));
 console.log('Balance: ' ,account.withdraw(500));
-console.log('Balance: ' ,account.withdraw(900));
+// console.log('Balance: ' ,account.withdraw(900));
