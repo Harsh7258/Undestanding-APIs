@@ -21,3 +21,12 @@ console.log(counterFunction());
 console.log(counterFunction());
 console.log(counterFunction());
 console.log(counterFunction());
+
+// Question - var[3, 3, 3] and let[0, 1, 2]
+for (let i = 0; i < 3; i++) {
+    const log = () => {
+        console.log(i);
+    }
+
+    setTimeout(log, 1000)
+}
